@@ -69,7 +69,7 @@ algoritmoduro = Efectos('Algoritmo Duro', 2, 'Aumentar la resistencia del objeti
 promesaNoManejada = Efectos("Promesa no manejada", 1, "Reducir la resistencia del objetivo en 2", "resistencia", -2)
 programacionEnPareja = Efectos("Programación en pareja", 3, "Aumentar el poder del objetivo en 2", "ataque", 2)
 
-cartas = [{ninjarojo},{ninjanegro},{algoritmoduro},{promesaNoManejada},{programacionEnPareja}]
+cartas = [ninjarojo,ninjanegro,algoritmoduro,promesaNoManejada,programacionEnPareja]
 
 import pdb; pdb.set_trace()
 
@@ -99,8 +99,5 @@ def hello_world():
     return render_template('index.html', cartas=cartas_por_mostrar)
 
 
-app.run()
+app.run(debug=True)
 
-////
-MATIAS NOS FUIMOS A BREAK, VOLVEMOS A LAS 12.50
-////
