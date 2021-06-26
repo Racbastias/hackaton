@@ -2,16 +2,24 @@
 
 #app = Flask(__name__)
 
-class Ninja():
-    def __init__(self, nombre, costo, poder, resistencia):
+class Carta:
+    def __init__(self, nombre, costo):
         self.nombre = nombre
         self.costo = costo
+        
+
+class Ninja(Carta):
+    def __init__(self, nombre, costo, poder, resistencia):
+        super().__init__(nombre, costo)
         self.poder = poder
         self.resistencia = resistencia
     
     #rival = carta ninja del oponente
     def attack(self, oponente):
-        if oponente.rival is None:
+        if isinstance(oponente, Ninja) == False:
+            print('Esta carta no es del tipo Ninja')
+            return
+        # ahora puedo atacar al oponente
             oponente.gemas -= self.poder
             print (f"Has conseguido quitarle {self.poder} gemas a {oponente.nombre}")
         else:    
