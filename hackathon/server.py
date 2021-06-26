@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-class Ninja(self, nombre):
+class Ninja():
     
     def __init__(self, nombre, costo, poder, resistencia):
         self.nombre = nombre
@@ -15,8 +15,7 @@ class Ninja(self, nombre):
 
 class Efectos(Ninja):
     
-    def __init__(self, nombre, efecto, costo, texto, stat, magnitud):
-        super().__init__(nombre)
+    def __init__(self, efecto, costo, texto, stat, magnitud):
         self.costo = costo
         self.efecto = efecto
         self.texto = texto
@@ -24,11 +23,18 @@ class Efectos(Ninja):
         self.magnitud = magnitud
 
     def algoritmoduro(self):
-        self.resistencia += 3
+        self.costo 
+        self.resistencia += self.magnitud
     
     def promesanomanejada(self, rival):
         rival.resistencia -= 2
 
+ninjarojo = Ninja('ninja_rojo', 3, 3, 4)
+ninjanegro = Ninja('ninja_negro', 4, 5, 4)
+
+algoritmoduro = Efectos('algoritmoduro', 2, 'Aumentar la resistencia del objetivo en 3','Resistencia', 3 )
+
+ninjarojo.algoritmoduro()
 
 
 
