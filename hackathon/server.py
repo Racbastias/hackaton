@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+#from flask import Flask, render_template
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 class Ninja():
     def __init__(self, nombre, costo, poder, resistencia):
@@ -39,20 +39,24 @@ class Efectos():
 
 class Jugador(Ninja, Efectos):
     def __init__(self, nombre, gemas):
+        self.nombre = nombre
+        self.gemas = gemas
 
-
-
-
+#cartas ninja
 ninjarojo = Ninja('ninja_rojo', 3, 3, 4)
 ninjanegro = Ninja('ninja_negro', 4, 5, 4)
 
+#cartas efecto
 algoritmoduro = Efectos('algoritmoduro', 2, 'Aumentar la resistencia del objetivo en 3','Resistencia', 3 )
+
+#jugadores
+jugador1 = Jugador('Andrea', 100)
+jugador2 = Jugador('Juan', 100)
+jugador3 = Jugador('Ruben',100)
 
 jugador1.ninjarojo.algoritmoduro()
 
-
-
-
+import pdb; pdb.set_trace()
 
 
 
@@ -64,7 +68,7 @@ hard_alg = Unit('Hard Algorithm', 2, 'resistencia', 3)
 hard_alg.play(red_jinja)
 
 cards = [red_jinja, hard_alg]
-'''
+
 
 objetos = [
     {
@@ -87,3 +91,4 @@ def hello_world():
 
 
 app.run()
+'''
