@@ -1,6 +1,7 @@
-#from flask import Flask, render_template
+from flask import Flask, render_template
 
-#app = Flask(__name__)
+app = Flask(__name__)
+
 # listo
 class Carta:
     def __init__(self, nombre, costo):
@@ -19,6 +20,7 @@ class Ninja(Carta):
         super().__init__(nombre, costo)
         self.poder = poder
         self.resistencia = resistencia
+        #self.image = 
 
 
     #rival = carta ninja del oponente
@@ -67,54 +69,38 @@ algoritmoduro = Efectos('Algoritmo Duro', 2, 'Aumentar la resistencia del objeti
 promesaNoManejada = Efectos("Promesa no manejada", 1, "Reducir la resistencia del objetivo en 2", "resistencia", -2)
 programacionEnPareja = Efectos("Programación en pareja", 3, "Aumentar el poder del objetivo en 2", "ataque", 2)
 
-'''
-#jugadores
-jugador1 = Jugador('Andrea', 100)
-jugador2 = Jugador('Juan', 100)
-jugador3 = Jugador('Ruben',100)
-'''
-
+cartas = [{ninjarojo},{ninjanegro},{algoritmoduro},{promesaNoManejada},{programacionEnPareja}]
 
 import pdb; pdb.set_trace()
 
+cartas_por_mostrar = []
 
+def jugada1():
+    cartas_por_mostrar.append(ninjarojo)
 
-'''
-# turno 1
-red_jinja = Unit('Red Ninja', 3, 3, 7)
-# turno 2
-hard_alg = Unit('Hard Algorithm', 2, 'resistencia', 3)
-hard_alg.play(red_jinja)
+def jugada2():
+    algoritmoduro.affect(ninjarojo)
+    cartas_por_mostrar(algoritmoduro)
 
-cards = [red_jinja, hard_alg]
+def jugada3():
+    cartas_por_mostrar.append(ninjanegro)
 
+def jugada4():
+    promesaNoManejada(ninjarojo)
 
-objetos = [
-    {
-        'nombre': 'Pepe',
-        'edad': 34
-    },
-    {
-        'nombre': 'Juana',
-        'edad': 23
-    },
-    {
-        'nombre': 'Julia',
-        'edad': 12
-    }
-]
-
-i=0
-objetos_por_mostrar = []
-
+jugadas = [jugada1, jugada2, jugada3]
+app.sgte_jugada = 0
 
 @app.route("/")
 def hello_world():
-    cartas_por_mostrar.apped(cartas[i])
-    i += 1
+    jugadas[app.sgte_jugada]()
+    app.sgte_jugada +=1
 
-    return render_template('index.html', objetos=objetos_por_mostrar)
+    return render_template('index.html', cartas=cartas_por_mostrar)
 
 
 app.run()
-'''
+
+////
+MATIAS NOS FUIMOS A BREAK, VOLVEMOS A LAS 12.50
+////
