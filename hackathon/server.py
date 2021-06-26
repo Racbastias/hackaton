@@ -3,17 +3,22 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 class Ninja():
-    
     def __init__(self, nombre, costo, poder, resistencia):
         self.nombre = nombre
         self.costo = costo
         self.poder = poder
         self.resistencia = resistencia
     
-    def attack(self):
-        raise NotImplementedError
+    #rival = carta ninja del oponente
+    def attack(self, oponente):
+        if oponente.rival is None:
+            oponente.gemas -= self.poder
+            print (f"Has conseguido quitarle {self.poder} gemas a {oponente.nombre}")
+        else:    
+            oponente.rival.resistencia -= self.poder
+            print (f"Has conseguido dañar en  {self.poder} puntos a {oponente.rival} de {oponente.nombre}")
 
-class Efectos(Ninja):
+class Efectos():
     
     def __init__(self, efecto, costo, texto, stat, magnitud):
         self.costo = costo
@@ -22,19 +27,28 @@ class Efectos(Ninja):
         self.stat = stat
         self.magnitud = magnitud
 
-    def algoritmoduro(self):
+    def algoritmoDuro(self):
         self.costo 
         self.resistencia += self.magnitud
     
-    def promesanomanejada(self, rival):
+    def promesaNoManejada(self, rival):
         rival.resistencia -= 2
+    
+    def programacionEnPareja(self):
+        self.poder += 2
+
+class Jugador(Ninja, Efectos):
+    def __init__(self, nombre, gemas):
+
+
+
 
 ninjarojo = Ninja('ninja_rojo', 3, 3, 4)
 ninjanegro = Ninja('ninja_negro', 4, 5, 4)
 
 algoritmoduro = Efectos('algoritmoduro', 2, 'Aumentar la resistencia del objetivo en 3','Resistencia', 3 )
 
-ninjarojo.algoritmoduro()
+jugador1.ninjarojo.algoritmoduro()
 
 
 
