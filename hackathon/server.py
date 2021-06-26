@@ -27,8 +27,11 @@ class Ninja(Carta):
             print('Esta carta no es del tipo Ninja')
             return
         oponente.resistencia -= self.poder
-        print (f"Has conseguido dañar en {self.poder} puntos a {oponente.nombre}")
-        
+        if oponente.resistencia > 0:
+            print(f"Has conseguido dañar en {self.poder} puntos a {oponente.nombre}")
+        else:
+            print(f"El ninja del oponente ha sido destruído")
+
 
 class Efectos(Carta):
     def __init__(self, nombre, costo, texto, stat, magnitud):
