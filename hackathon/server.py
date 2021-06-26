@@ -75,9 +75,16 @@ objetos = [
     }
 ]
 
+i=0
+objetos_por_mostrar = []
+
+
 @app.route("/")
 def hello_world():
-    return render_template('index.html', objetos=objetos)
+    cartas_por_mostrar.apped(cartas[i])
+    i += 1
+
+    return render_template('index.html', objetos=objetos_por_mostrar)
 
 
 app.run()
