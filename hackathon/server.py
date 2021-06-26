@@ -1,13 +1,13 @@
 #from flask import Flask, render_template
 
 #app = Flask(__name__)
-
+# listo
 class Carta:
     def __init__(self, nombre, costo):
         self.nombre = nombre
         self.costo = costo
         
-
+#casi listo
 class Ninja(Carta):
     def __init__(self, nombre, costo, poder, resistencia):
         super().__init__(nombre, costo)
@@ -19,18 +19,12 @@ class Ninja(Carta):
         if isinstance(oponente, Ninja) == False:
             print('Esta carta no es del tipo Ninja')
             return
-        # ahora puedo atacar al oponente
-            oponente.gemas -= self.poder
-            print (f"Has conseguido quitarle {self.poder} gemas a {oponente.nombre}")
-        else:    
-            oponente.rival.resistencia -= self.poder
-            print (f"Has conseguido dañar en  {self.poder} puntos a {oponente.rival} de {oponente.nombre}")
+        oponente.resistencia -= self.poder
+        print (f"Has conseguido dañar en {self.poder} puntos a {oponente.nombre}")
 
-class Efectos():
-    
-    def __init__(self, efecto, costo, texto, stat, magnitud):
-        self.costo = costo
-        self.efecto = efecto
+class Efectos(Carta):
+    def __init__(self, nombre, costo, texto, stat, magnitud):
+        super().__init__(nombre, costo)
         self.texto = texto
         self.stat = stat
         self.magnitud = magnitud
@@ -50,19 +44,6 @@ class Jugador(Ninja, Efectos):
         self.nombre = nombre
         self.gemas = gemas
 
-#cartas ninja
-ninjarojo = Ninja('ninja_rojo', 3, 3, 4)
-ninjanegro = Ninja('ninja_negro', 4, 5, 4)
-
-#cartas efecto
-algoritmoduro = Efectos('algoritmoduro', 2, 'Aumentar la resistencia del objetivo en 3','Resistencia', 3 )
-
-#jugadores
-jugador1 = Jugador('Andrea', 100)
-jugador2 = Jugador('Juan', 100)
-jugador3 = Jugador('Ruben',100)
-
-jugador1.ninjarojo.algoritmoduro()
 
 import pdb; pdb.set_trace()
 
