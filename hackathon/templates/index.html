@@ -15,14 +15,14 @@
         <div class = "container text-center">
             <h1 cl>Template para la Hackathon</h1>
             <div class="row align-items-center">
-                <div class= "col-4">
-                    <a href="index.html" type="button" class="btn btn-warning d-block mx-auto">Jugar</a>
+                <div class= "col-2">
+                    <a href="/" type="button" class="btn btn-warning d-block mx-auto">Jugar</a>
                 </div>
-                <div class="col-4">
-                    {% for objeto in objetos%}
-                        <div class="card" style="width: auto;" {%if carta.ataque%}class="unit"{% else %}class="effect">
+                <div class="col-5">
+                    {% for carta in cartas_por_mostrar %}
+                        <div class="card" style="width: auto;" {%if carta.nombre%}class="Ninja"{% else %}class="Efectos"{% endif %}>
                             <img src="" class="card-img-top">
-                            <div class="card-body bg-light border border-4 border-danger p-0 m-0">
+                            <div class="card-body bg-light border border-4 border-danger p-3 m-0" style = "border-radius:3px">
                                 <h5 class="card-title text-dark text-center p-0 m-0">{{carta.nombre}}</h5>
                                 <p class="card-text text-info">{{carta.costo}}</p>
                                 <div class="border bg-dark text-light"><br>{{carta.img}}</p></div>

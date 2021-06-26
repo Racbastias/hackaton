@@ -71,7 +71,7 @@ programacionEnPareja = Efectos("Programación en pareja", 3, "Aumentar el poder 
 
 cartas = [ninjarojo,ninjanegro,algoritmoduro,promesaNoManejada,programacionEnPareja]
 
-import pdb; pdb.set_trace()
+#import pdb; pdb.set_trace()
 
 cartas_por_mostrar = []
 
@@ -80,7 +80,7 @@ def jugada1():
 
 def jugada2():
     algoritmoduro.affect(ninjarojo)
-    cartas_por_mostrar(algoritmoduro)
+    cartas_por_mostrar.append(algoritmoduro)
 
 def jugada3():
     cartas_por_mostrar.append(ninjanegro)
@@ -93,8 +93,11 @@ app.sgte_jugada = 0
 
 @app.route("/")
 def hello_world():
+    print(jugadas[app.sgte_jugada])
     jugadas[app.sgte_jugada]()
     app.sgte_jugada +=1
+    #while app.sgte_jugada is None:
+        #break
 
     return render_template('index.html', cartas=cartas_por_mostrar)
 
