@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Template para Hackathon</title>
+        <title>Bootcamp Hackathon</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -12,21 +12,27 @@
     <body>
         <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
         </nav>
-        <div class = "container">
-            <h1>Template para la Hackathon</h1>
-            <div class="row">
-                <div class= "col-4"></div>
+        <div class = "container text-center">
+            <h1 cl>Template para la Hackathon</h1>
+            <div class="row align-items-center">
+                <div class= "col-4">
+                    <!--<button type="button" class="btn btn-warning d-block mx-auto">Jugar</button>-->
+                </div>
                 <div class="col-4">
                     {% for objeto in objetos%}
-                        <div class="card" style="width: 18rem;" {%if carta.ataque%}class="unit"{% else %}class="effect">
+                        <div class="card" style="width: auto;" {%if carta.ataque%}class="unit"{% else %}class="effect">
                             <img src="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">{{carta.nombre}}</h5>
-                                <p class="card-text">Resistencia: {{carta.resistenia}}</p>
+                            <div class="card-body bg-light border border-4 border-danger p-0 m-0">
+                                <h5 class="card-title text-dark text-center p-0 m-0">{{carta.nombre}}</h5>
+                                <p class="card-text text-info">{{carta.costo}}</p>
+                                <div class="border bg-dark text-light"><br>{{carta.img}}</p></div>
+                                <p class="card-text text-danger">{{carta.poder}}</p>
+                                <p class="card-text text-success">{{carta.resistencia}}</p>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
+                <div class="col"></div>
             </div>
         </div>
     </body>

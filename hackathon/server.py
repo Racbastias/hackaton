@@ -1,7 +1,7 @@
 #from flask import Flask, render_template
 
 #app = Flask(__name__)
-
+# listo
 class Carta:
     def __init__(self, nombre, costo):
         self.nombre = nombre
@@ -13,7 +13,7 @@ class Carta:
     def __repr__(self):
         return self
         
-
+#casi listo
 class Ninja(Carta):
     def __init__(self, nombre, costo, poder, resistencia):
         super().__init__(nombre, costo)
@@ -27,10 +27,10 @@ class Ninja(Carta):
             print('Esta carta no es del tipo Ninja')
             return
         oponente.resistencia -= self.poder
-        print (f"Has conseguido dañar en {self.poder} puntos al {oponente.nombre}. Su nueva resistencia es {oponente.resistencia}")
+        print (f"Has conseguido dañar en {self.poder} puntos a {oponente.nombre}")
+        
 
 class Efectos(Carta):
-    
     def __init__(self, nombre, costo, texto, stat, magnitud):
         super().__init__(nombre, costo)
         self.texto = texto
