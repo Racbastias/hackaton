@@ -21,6 +21,7 @@ class Ninja(Carta):
             return
         oponente.resistencia -= self.poder
         print (f"Has conseguido dañar en {self.poder} puntos a {oponente.nombre}")
+        
 
 class Efectos(Carta):
     def __init__(self, nombre, costo, texto, stat, magnitud):
@@ -30,7 +31,7 @@ class Efectos(Carta):
         self.magnitud = magnitud
 
     def algoritmoDuro(self):
-        self.costo 
+        self.costo
         self.resistencia += self.magnitud
     
     def promesaNoManejada(self, rival):
