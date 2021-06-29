@@ -20,7 +20,7 @@ class Ninja(Carta):
         super().__init__(nombre, costo)
         self.poder = poder
         self.resistencia = resistencia
-        #self.image = 
+        #self.image
 
 
     #rival = carta ninja del oponente
