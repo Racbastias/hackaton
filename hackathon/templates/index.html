@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-8">
                     {% for carta in cartas_por_mostrar %}
-                        <div class="card" style="width: auto;" {%if carta.nombre%}class="Ninja"{% else %}class="Efectos"{% endif %>
+                        <div class="card" style="width: auto;" {%if carta.nombre%}class="Ninja"{% else %}class="Efectos"{% endif %}>
                             <img src="" class="card-img-top">
                             <div class="card-body p-3 m-0" >
                                 <h5 class="card-title text-dark text-center p-0 m-0">{{carta.nombre}}</h5>

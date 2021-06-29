@@ -71,7 +71,6 @@ class Efectos(Carta):
 ninjarojo = Ninja('ninja_rojo', 3, 3, 4)
 ninjanegro = Ninja('ninja_negro', 4, 5, 4)
 
-
 #cartas efecto
 algoritmoduro = Efectos('Algoritmo Duro', 2, 'Aumentar la resistencia del objetivo en 3','resistencia', 3 )
 promesaNoManejada = Efectos("Promesa no manejada", 1, "Reducir la resistencia del objetivo en 2", "resistencia", -2)
@@ -94,13 +93,13 @@ def jugada3():
     cartas_por_mostrar.append(ninjanegro)
 
 def jugada4():
-    promesaNoManejada(ninjarojo)
+    promesaNoManejada.affect(ninjarojo)
 
 def jugada5():
-    promesaNoManejada(ninjanegro)
+    promesaNoManejada.affect(ninjanegro)
 
 def jugada6():
-    programacionEnPareja(ninjarojo)
+    programacionEnPareja.affect(ninjarojo)
     cartas_por_mostrar.append(programacionEnPareja)
 def jugada7():
     ninjarojo.attack(ninjanegro)
