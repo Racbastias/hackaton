@@ -56,9 +56,9 @@ ninjarojo = Ninja('Ninja Rojo', 3, 'ninjarojo.jpg', 3, 4)
 ninjanegro = Ninja('Ninja Negro', 4, 'ninjanegro.jpg', 5, 4)
 
 #cartas efecto
-algoritmoduro = Efectos('Algoritmo Duro', 2, 'algoritmoduro.jpeg', 'Aumentar la resistencia del objetivo en 3','resistencia', 3 )
-promesaNoManejada = Efectos('Promesa no manejada', 1, 'promesa.jpeg', 'Reducir la resistencia del objetivo en 2', 'resistencia', -2)
-programacionEnPareja = Efectos('Programacion en pareja', 3,'programacion.jpeg', 'Aumentar el poder del objetivo en 2', "ataque", 2)
+algoritmoduro = Efectos('Algoritmo Duro', 2, 'algoritmoduro.jpeg', 'Aumentar la resistencia del objetivo en 3','Resistencia', 3 )
+promesaNoManejada = Efectos('Promesa no manejada', 1, 'promesa.jpeg', 'Reducir la resistencia del objetivo en 2', 'Resistencia', -2)
+programacionEnPareja = Efectos('Programacion en pareja', 3,'programacion.jpeg', 'Aumentar el poder del objetivo en 2', "Ataque", 2)
 
 cartas = [ninjarojo,ninjanegro,algoritmoduro,promesaNoManejada,programacionEnPareja]
 
@@ -98,9 +98,7 @@ def hello_world():
     print(jugadas[app.sgte_jugada])
     jugadas[app.sgte_jugada]()
     app.sgte_jugada +=1
-    #while app.sgte_jugada is None:
-        #break
-
+    
     return render_template('index.html', cartas=cartas_por_mostrar)
 
 
